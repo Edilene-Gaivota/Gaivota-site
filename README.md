@@ -1,20 +1,26 @@
-# Gaivota Consultoria Contábil — reconstrução atualizada (06/11/2026)
+# Gaivota Consultoria Contábil — versão Cloudflare Pages
 
-Esta é uma **reconstrução independente** baseada no conteúdo público acessível do site original em 06/11/2026. **Não é exportação fiel do código-fonte original.** Elementos gráficos e animações foram aproximados; imagens e logotipo originais não foram extraídos.
+Site independente publicado em **https://gaivota-regularizacao-obras.pages.dev/**.
 
-## Publicação no Cloudflare Pages
+## Implantação
+- Repositório GitHub `Edilene-Gaivota/Gaivota-site`, branch `main`.
+- Cloudflare Pages conectado ao GitHub; sem framework e sem comando de build.
+- `index.html`, `style.css` e `script.js`: página inicial e interações.
+- `blog/index.html`: blog independente com 19 manchetes históricas (até outubro/2026), busca e filtros; **não é feed de notícias em tempo real**.
 
-1. Extraia o ZIP no computador.
-2. Envie `index.html`, `style.css`, `script.js` e este README para a raiz do repositório GitHub.
-3. No Cloudflare Pages, conecte o repositório e selecione implantação estática: sem comando de build, diretório de saída `/`.
-4. Teste no endereço `.pages.dev` antes de despublicar a versão antiga.
+## O que foi reproduzido
+Layout responsivo em verde #2CB38D e roxo #4B345D, seção de serviços, formação, treinamentos, jornada do atendimento, perguntas frequentes, integração com WhatsApp empresarial e formulário que prepara mensagem no WhatsApp.
 
-## Funcionalidades e limites
+## Limites da migração
+Este repositório é uma **reconstrução**, não um backup/exportação integral da aplicação ChatGPT original.
+- Elementos gráficos foram aproximados. O logotipo e as fotografias originais não foram migrados fielmente.
+- Notícias foram preservadas como títulos históricos; sem sincronização automática. Apenas links de fontes que puderam ser confirmados são apresentados.
+- A área administrativa de avaliações e o editor interno do blog são privados e **não foram importados**.
+- O formulário de avaliação **não armazena** dados em banco e encaminha informações somente quando a pessoa confirma o WhatsApp.
+- Alguns efeitos visuais e movimentos podem diferir do site original.
 
-- Navegação responsiva, serviços em abas, FAQ com busca, animação de rolagem, contato por WhatsApp e redes sociais.
-- O formulário de avaliações prepara uma mensagem no WhatsApp: **não salva avaliações em banco de dados**. A implementação de avaliações públicas requer serviço de dados, autenticação administrativa, consentimento e política de privacidade.
-- Blog e galeria são placeholders, como na versão pública consultada.
-- O logotipo, as imagens e a reprodução visual exata precisam dos arquivos originais ou de referência visual.
-- Telefone configurado: +55 11 92666-0609.
+## Manutenção
+Edite arquivos na branch `main`. A Cloudflare Pages publica automaticamente as alterações após um deploy bem-sucedido. Confira o histórico de deploys no painel antes de compartilhar o site.
 
-Não publique dados de clientes ou avaliações privadas no GitHub.
+## Segurança
+Evite inserir senhas, tokens ou dados de clientes nos arquivos. Para administrar artigos e avaliações com persistência, integre um CMS e armazenamento externos com autenticação e política de privacidade adequada.
