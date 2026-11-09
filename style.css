@@ -22,3 +22,48 @@ h2{max-width:950px}h2::first-line{letter-spacing:-.045em}
 #blog .btn{margin-top:12px}
 @media(max-width:900px){#processo .journey{grid-template-columns:repeat(2,1fr)}.brand small{margin:0 0 0 50px}}
 @media(max-width:600px){#processo .journey{grid-template-columns:1fr}.blog-highlight{grid-template-columns:1fr;padding:25px}.blog-accent{display:none}.brand{font-size:20px}.brand small{font-size:8px}.hero{min-height:auto}.art{display:flex;min-height:230px;margin:20px 0}.art svg{height:130px}.art span{font-size:10px}}
+
+/* Fidelidade visual ao site chat — novembro 2026 */
+:root{--teal:#227d69;--deep:#244c43}
+.top{display:none}
+header{padding-top:15px;padding-bottom:15px;border-bottom-color:#e6f1eb;background:#ffffffef}
+nav{align-items:center;gap:21px}
+nav a:last-child{background:var(--teal);border-radius:30px;color:#fff;padding:11px 19px}
+nav a:last-child:hover{background:#1d6657;color:#fff}
+.hero{background:radial-gradient(ellipse at 80% 45%,#edf9f2,transparent 45%),#fff}
+h1 em{color:var(--teal)}
+.btn{background:var(--teal);border-color:var(--teal)}
+.btn:hover{background:#1f6356;border-color:#1f6356}
+.secondary{color:var(--teal);background:transparent}
+.contact-section{background:linear-gradient(120deg,#2e705e,#205e55)}
+footer{background:#f4f7f6;color:#384a43;border-top:1px solid #e5eee9}
+footer a{color:#24755e}
+.footer-layout{display:grid;grid-template-columns:1fr 2fr;gap:80px}
+.footer-experience{border-left:3px solid var(--green);padding-left:19px;max-width:260px;align-self:center;font-size:14px}
+.feedback-tab{position:fixed;right:0;top:42%;z-index:13;writing-mode:vertical-rl;transform:rotate(180deg);background:#e6f7ee;color:#205d4b;border:1px solid #b9dfcc;border-radius:0 12px 12px 0;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.04em;padding:15px 10px;box-shadow:-2px 4px 18px #184b3922}
+.feedback-tab:hover{background:#cdf0dc}
+.story-carousel{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab;padding:8px 4px 25px}
+.story-carousel::-webkit-scrollbar{display:none}
+.story-carousel .tile{flex:0 0 min(66%,650px);scroll-snap-align:start;min-height:310px;padding:38px;border-radius:24px}
+.story-carousel .tile:nth-child(1){background:linear-gradient(125deg,#f6fcf9,#e5f4ee)}
+.story-carousel .tile:nth-child(2){background:linear-gradient(120deg,#f3f8f6,#f4edf7)}
+.story-carousel .tile:nth-child(3){background:linear-gradient(120deg,#e9f5f2,#f5f9f5)}
+.carousel-controls{display:flex;justify-content:flex-end;align-items:center;gap:16px;margin-top:18px}
+.carousel-controls button,.journey-controls button{border:1px solid #c8d7cd;border-radius:50px;background:#fff;color:var(--deep);min-width:44px;min-height:44px;font-size:24px}
+.story-counter{font-size:14px;color:#53675d;font-weight:700}
+.journey-layout{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px;align-items:stretch}
+#processo .journey{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0}
+#processo .journey .tile{cursor:pointer;border-top:0;box-shadow:none;padding:22px}
+#processo .journey .tile.active{background:#eaf7f0;border:2px solid var(--green)}
+#processo .journey .tile h3{font-size:21px}
+.journey-focus{background:#fff;border:1px solid #dcefe4;border-radius:22px;padding:35px;display:flex;flex-direction:column}
+.journey-focus h3{color:var(--deep)}
+.journey-controls{display:flex;justify-content:space-between;gap:12px;margin-top:auto;padding-top:35px}
+.journey-controls button{font-size:13px;padding:8px 14px;font-weight:700}
+.review-progress{display:flex;max-width:720px;gap:16px;margin:30px 0;padding-bottom:15px;border-bottom:1px solid #d8e9df}
+.review-progress span{flex:1;color:#7b8980;font-size:14px;font-weight:700}
+.review-progress .current{color:var(--teal)}
+.review-summary{background:#f4f9f5;padding:22px;border-radius:18px;white-space:pre-wrap;max-width:720px}
+#review-step-two[hidden],#review-step-one[hidden]{display:none}
+@media(max-width:900px){.journey-layout{grid-template-columns:1fr}.footer-layout{gap:25px}.story-carousel .tile{flex-basis:80%}}
+@media(max-width:600px){.story-carousel .tile{flex-basis:90%;padding:26px}.feedback-tab{top:auto;bottom:18%;font-size:11px;padding:10px 7px}#processo .journey{grid-template-columns:1fr 1fr}#processo .journey .tile{padding:12px}#processo .journey .tile h3{font-size:17px}.journey-focus{padding:24px}.footer-layout{grid-template-columns:1fr}}
