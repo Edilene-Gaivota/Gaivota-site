@@ -1,0 +1,11 @@
+{
+  "name": "gaivota-previa-fiel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Captura estática fiel do site original para avaliação em branch separada",
+  "scripts": {
+    "postinstall": "node migration/capture.mjs",
+    "build": "node migration/capture.mjs"
+  },
+  "engines": { "node": ">=18.17" }
+}
