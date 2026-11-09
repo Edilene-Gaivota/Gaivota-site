@@ -1,0 +1,92 @@
+/* Oceânica Botânica: green and petroleum surfaces, neutral reading areas. */
+:root{--deep:#061d24;--ink:#0e2f3a;--petroleum:#155c5a;--green:#1b7e76;--brand:#2cb38d;--mint:#c6e9dc;--paper:#f4f7f6;--muted:#2e3f3d;--line:#d7dfd8;--purple:#4b345d}
+body{background:var(--paper)}
+.button{background:var(--ink)}.button:hover{background:var(--petroleum)}
+.section-kicker{color:var(--purple)}.section-kicker::before{background:var(--purple)}
+.hero::before{background:radial-gradient(ellipse 46% 46% at 76% 47%,#c6e9dce0 0%,#c6e9dc7a 42%,transparent 100%),radial-gradient(ellipse 34% 34% at 84% 65%,#7dd4b833 0%,transparent 100%)}
+.learning-section{background:linear-gradient(155deg,#f4f7f6 25%,#c6e9dc66 75%,#f4f7f6)}
+.learning-section .section-heading .section-kicker{color:var(--purple)}
+.learning-format{background:#ffffffcc;border-color:var(--line)}.learning-index{color:var(--green)}
+.learning-format:hover,.learning-format:focus-within{background:var(--petroleum);border-color:var(--petroleum);box-shadow:0 18px 35px #061d2420}
+.learning-format:hover .learning-index,.learning-format:focus-within .learning-index{color:#7dd4b8}
+.learning-invitation>.button{background:var(--petroleum)}
+#trajectory-drawer,#feedback{--ink:#0e2f3a;--green:#1b7e76;--muted:#2e3f3d;--line:#d7dfd8;--mint:#c6e9dc;color:var(--ink)}
+.feedback-bridge::before{background:var(--green)}.trajectory-handle{color:var(--petroleum);border-color:var(--green);background:var(--paper)}
+.trajectory-handle:hover,.trajectory-handle:focus-visible{color:#fff;background:var(--petroleum);border-color:var(--petroleum);box-shadow:0 0 0 8px var(--paper),0 10px 24px #155c5a18}
+.trajectory-panel-content{background:linear-gradient(125deg,#f4f7f6,#c6e9dc66);border-color:var(--line)}
+.feedback-section{background:radial-gradient(ellipse at 10% 70%,#c6e9dc80,transparent 60%),#f4f7f6}
+.feedback-card{background:#fff;border-color:var(--line);box-shadow:0 22px 65px #061d2410}.feedback-card::before{background:var(--brand)}
+#feedback h2 em,#trajectory-drawer h2 em{color:var(--green)}
+#feedback .button{background:var(--petroleum)}#feedback .button:hover{background:#0f4c47}
+.journal-teaser,.editorial-slide{background:linear-gradient(120deg,#f4f7f6,#c6e9dc66)}
+.journal-label{color:var(--purple)}.journal-mark{color:var(--green)}.journal-preview{border-left-color:var(--brand)}
+.portal-hero h1 em,.portal-article h2,.portal-card h3,.portal-empty h3{color:var(--petroleum)}
+.portal-orbit:before{background:radial-gradient(ellipse,#c6e9dcaa,transparent 65%)}.portal-orbit span{color:var(--petroleum);border-color:#7dd4b8;background:#f4f7f6}.portal-orbit span:nth-child(2){background:var(--petroleum);color:#fff}
+.portal-empty,.portal-note{background:#c6e9dc4d;border-color:var(--line)}.portal-empty-mark{color:var(--green)}
+.portal-card.featured{background:linear-gradient(125deg,#c6e9dc66,#fff);border-left-color:var(--brand)}
+.portal-filters button[aria-pressed=true]{background:var(--petroleum);border-color:var(--petroleum);color:#fff}
+.portal-question-grid a:hover{background:#c6e9dc66}.portal-card .portal-meta{color:var(--purple)}
+.journal-footer{background:var(--deep)}.journal-footer p,.journal-footer a{color:#f4f7f6}
+.editor-form .button{background:var(--petroleum)}
+
+/* Small contrast accents only: glyphs, dots and compact indicators. */
+:root{--accent-deep:#4b345d;--accent-medium:#5a3e66;--accent-muted:#6a5874;--accent-soft:#c6bed0}
+.text-link .ui-arrow,.learning-format .ui-arrow,.stage-arrow,.back-to-top svg{color:var(--accent-deep)}
+.button .ui-arrow,.learning-format:hover .ui-arrow,.learning-format:focus-within .ui-arrow,footer .ui-arrow,.journey .arrow-button .ui-arrow{color:var(--accent-soft)}
+.faq .faq-chevron,.faq .faq-question>summary .faq-chevron{color:var(--accent-medium)}
+.feedback-tab-icon,.feedback-tab-chevron,.trajectory-close svg{color:var(--accent-deep)}
+.trajectory-handle:hover .feedback-tab-icon,.trajectory-handle:hover .feedback-tab-chevron,.trajectory-handle:focus-visible .feedback-tab-icon,.trajectory-handle:focus-visible .feedback-tab-chevron{color:var(--accent-soft)}
+.gallery-buttons button svg,.explore-arrows button svg{color:var(--accent-medium)}
+.explore-pagination button>span{background:var(--accent-soft)}
+.explore-pagination button[aria-current="true"]>span{background:var(--accent-deep)}
+.news-alert-toggle>svg{color:var(--accent-muted)}.news-alert-dot{background:var(--accent-medium)}
+
+/* Light editorial surface: override the old dark news-slide text palette. */
+.news-slide.editorial-slide{color:var(--ink);border-color:var(--line)}
+.editorial-slide .explore-number{color:var(--accent-deep)}
+.editorial-slide h3{color:var(--ink)}
+.editorial-slide h3 em,.editorial-slide .editorial-window h4,.editorial-slide .editorial-window h4 em{color:var(--petroleum)}
+.editorial-slide .news-slide-intro>p,.editorial-slide .editorial-window>p{color:var(--muted)}
+.editorial-slide .text-link{color:var(--petroleum);border-color:var(--accent-muted)}
+.news-slide.editorial-slide .button{background:var(--ink);color:#fff}
+.news-slide.editorial-slide .button:hover{background:var(--petroleum);color:#fff}
+/* Additional accents remain confined to small marks and controls. */
+header nav>a:not(.button)::after{background:var(--accent-deep)}
+.faq-search svg,.portal-search svg,.portal-question-grid svg,.social-panel .ui-arrow,.drawer-review-controls button svg{color:var(--accent-deep)}
+.feedback-choice input:checked+.choice-check{background:var(--accent-deep);border-color:var(--accent-deep)}
+.feedback-steps li[aria-current=step] span{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.choice-check{border-color:var(--accent-muted)}
+.text-link:not(.learning-format .text-link){text-decoration-color:var(--accent-muted)}
+.back-to-top{border-color:var(--accent-muted)}
+
+/* Training cards: gentle focus/zoom inspired by the supplied thumbnail animation. */
+.learning-section .learning-formats{isolation:isolate}
+.learning-section .learning-format{
+  outline:2px solid transparent;outline-offset:5px;
+  transform-origin:center center;
+  transition:transform .42s cubic-bezier(.22,.8,.25,1),background-color .38s ease,border-color .38s ease,box-shadow .42s ease,outline-color .32s ease,filter .38s ease;
+}
+.learning-section .learning-format:focus-within{
+  z-index:2;outline-color:#4b345d;transform:translateY(-8px) scale(1.04);
+  box-shadow:0 22px 40px #061d2426;
+}
+@media(hover:hover) and (pointer:fine){
+  .learning-section .learning-format:hover{
+    z-index:2;outline-color:#4b345d;transform:translateY(-8px) scale(1.04);
+    box-shadow:0 22px 40px #061d2426;filter:saturate(1);
+  }
+  .learning-section .learning-formats:has(.learning-format:hover) .learning-format:not(:hover):not(:focus-within){
+    transform:scale(.985);filter:saturate(.65);box-shadow:none;
+  }
+}
+@media(max-width:720px){
+  .learning-section .learning-format:focus-within{transform:translateY(-3px) scale(1.012)}
+}
+@media(prefers-reduced-motion:reduce){
+  .learning-section .learning-format,
+  .learning-section .learning-format:hover,
+  .learning-section .learning-format:focus-within{
+    transform:none!important;
+    transition:background-color .18s ease,border-color .18s ease,outline-color .18s ease,box-shadow .18s ease!important;
+  }
+}

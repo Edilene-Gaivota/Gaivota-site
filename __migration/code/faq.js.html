@@ -1,0 +1,71 @@
+<!doctype html><meta charset="utf-8"><pre>(() =&gt; {
+  const groups = [...document.querySelectorAll('.faq-topic')];
+
+  groups.forEach(group =&gt; {
+    group.addEventListener('toggle', event =&gt; {
+      if (event.target !== group) return;
+      group.querySelector('.faq-expand-label').textContent = group.open ? 'Recolher' : 'Expandir';
+      if (group.open) {
+        groups.forEach(other =&gt; { if (other !== group) other.open = false; });
+      } else {
+        group.querySelectorAll('.faq-question').forEach(question =&gt; { question.open = false; });
+      }
+    });
+
+    const questions = [...group.querySelectorAll('.faq-question')];
+    questions.forEach(question =&gt; question.addEventListener('toggle', () =&gt; {
+      if (question.open) questions.forEach(other =&gt; { if (other !== question) other.open = false; });
+    }));
+  });
+
+  // Keep existing direct links to FAQ topics usable.
+  function openLinkedTopic() {
+    const topic = document.getElementById(location.hash.slice(1));
+    if (topic?.classList.contains('faq-topic')) topic.open = true;
+  }
+  addEventListener('hashchange', openLinkedTopic);
+  openLinkedTopic();
+})();
+
+(() =&gt; {
+  const input = document.querySelector('#faq-search');
+  const clear = document.querySelector('#faq-clear');
+  const groups = document.querySelector('.faq-groups');
+  const results = document.querySelector('#faq-search-results');
+  const status = document.querySelector('#faq-search-status');
+  const normalize = value =&gt; value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR');
+  const questions = [...groups.querySelectorAll('.faq-question')].map(node =&gt; ({ node, text: normalize(node.textContent) }));
+  function search() {
+    const query = normalize(input.value.trim());
+    clear.hidden = input.value.length === 0;
+    groups.hidden = Boolean(query);
+    results.hidden = !query;
+    results.replaceChildren();
+    if (!query) { status.textContent = ''; return; }
+    const terms = query.split(/\s+/);
+    const matches = questions.filter(item =&gt; terms.every(term =&gt; item.text.includes(term)));
+    status.textContent = `${matches.length} ${matches.length === 1 ? 'resposta encontrada' : 'respostas encontradas'}.`;
+    matches.forEach(({ node }) =&gt; {
+      const clone = node.cloneNode(true);
+      clone.open = false;
+      clone.name = 'faq-search-answers';
+      results.append(clone);
+    });
+    if (!matches.length) {
+      const text = document.createElement('p');
+      text.className = 'faq-empty';
+      text.textContent = 'Não encontrei esse assunto nas perguntas. Experimente outra palavra ou fale comigo para conversarmos sobre sua dúvida.';
+      const link = document.createElement('a');
+      link.className = 'text-link'; link.href = 'https://wa.me/5511926660609'; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = 'Fale comigo pelo WhatsApp ';
+      const arrow = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      const arrowPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      for (const [name, value] of Object.entries({class:'ui-arrow',width:'20',height:'20',viewBox:'0 0 24 24',fill:'none',stroke:'currentColor','stroke-width':'1.8','stroke-linecap':'round','stroke-linejoin':'round','aria-hidden':'true',focusable:'false'})) arrow.setAttribute(name, value);
+      arrowPath.setAttribute('d', 'M7 17 17 7M7 7h10v10'); arrow.append(arrowPath); link.append(arrow);
+      const wrap = document.createElement('p'); wrap.append(link); results.append(text, wrap);
+    }
+  }
+  input.addEventListener('input', search);
+  clear.addEventListener('click', () =&gt; { input.value = ''; search(); input.focus(); });
+  input.addEventListener('keydown', event =&gt; { if (event.key === 'Escape') { input.value = ''; search(); } });
+})();
+</pre>

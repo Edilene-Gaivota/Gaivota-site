@@ -1,0 +1,20 @@
+<!doctype html><meta charset="utf-8"><pre>(() =&gt; {
+  const drawer=document.querySelector('#trajectory-drawer'),toggle=document.querySelector('#trajectory-toggle'),panel=document.querySelector('#trajectory-panel');
+  if(!drawer||!toggle||!panel)return;
+  const motion=matchMedia('(prefers-reduced-motion:reduce)'),view=document.querySelector('#drawer-review'),controls=document.querySelector('#drawer-review-controls'),pause=document.querySelector('#review-pause');
+  let opened=false,items=[],index=0,paused=motion.matches,hovering=false,visible=false,rotation,poll,loading=false;
+  function render(){view.replaceChildren();controls.hidden=items.length&lt;2;if(!items.length){const p=document.createElement('p');p.className='drawer-review-state';p.textContent='As avaliações autorizadas para exibição aparecerão aqui.';view.append(p);return;}
+    index=(index+items.length)%items.length;const item=items[index],quote=document.createElement('blockquote');if(item.comment){const p=document.createElement('p');p.textContent=item.comment;quote.append(p);}if(item.choices.length){const list=document.createElement('ul');item.choices.forEach(text=&gt;{const li=document.createElement('li');li.textContent=text;list.append(li);});quote.append(list);}const cite=document.createElement('cite');cite.textContent=item.name||'Avaliação anônima';quote.append(cite);view.append(quote);document.querySelector('#review-position').textContent=`${index+1} de ${items.length}`;}
+  function updatePause(){pause.textContent=paused?'Reproduzir':'Pausar';pause.setAttribute('aria-pressed',String(paused));}
+  async function load(){if(loading)return;loading=true;try{const response=await fetch('/api/feedback',{cache:'no-store'});if(!response.ok)throw new Error();const data=await response.json(),current=items[index]?.id;items=Array.isArray(data.items)?data.items:[];index=Math.max(0,items.findIndex(item=&gt;item.id===current));render();}catch{if(!items.length){view.replaceChildren();const p=document.createElement('p');p.className='drawer-review-state';p.textContent='Não foi possível carregar as avaliações agora. Tente reabrir este espaço em alguns instantes.';view.append(p);}}finally{loading=false;}}
+  function timers(){clearInterval(rotation);clearInterval(poll);if(!opened)return;rotation=setInterval(()=&gt;{if(!paused&amp;&amp;!motion.matches&amp;&amp;!hovering&amp;&amp;visible&amp;&amp;!document.hidden&amp;&amp;!panel.querySelector('.drawer-feedback').contains(document.activeElement)&amp;&amp;items.length&gt;1){index++;render();}},7000);poll=setInterval(()=&gt;{if(visible&amp;&amp;!document.hidden)load();},60000);}
+  function setOpen(value,restore=false){opened=value;drawer.classList.toggle('is-open',opened);panel.inert=!opened;panel.setAttribute('aria-hidden',String(!opened));toggle.setAttribute('aria-expanded',String(opened));toggle.setAttribute('aria-label',opened?'Fechar feedbacks':'Abrir feedbacks');if(opened)load();timers();if(restore)toggle.focus({preventScroll:true});}
+  toggle.addEventListener('click',()=&gt;setOpen(!opened));document.querySelector('#trajectory-close').addEventListener('click',()=&gt;setOpen(false,true));
+  drawer.addEventListener('keydown',event=&gt;{if(event.key==='Escape'&amp;&amp;opened){event.preventDefault();setOpen(false,true);}});
+  panel.querySelector('.drawer-feedback').addEventListener('pointerenter',()=&gt;hovering=true);panel.querySelector('.drawer-feedback').addEventListener('pointerleave',()=&gt;hovering=false);
+  for(const [id,direction] of [['#review-prev',-1],['#review-next',1]])document.querySelector(id).addEventListener('click',()=&gt;{if(!items.length)return;index+=direction;render();document.querySelector('#review-announcement').textContent=`Avaliação ${index+1} de ${items.length}`;});
+  pause.addEventListener('click',()=&gt;{paused=!paused;updatePause();});motion.addEventListener('change',()=&gt;{paused=motion.matches;updatePause();});
+  new IntersectionObserver(entries=&gt;{visible=entries[0].isIntersecting;},{threshold:.1}).observe(panel);
+  document.addEventListener('feedback:saved',()=&gt;{index=0;if(opened)load();});updatePause();setOpen(false);
+})();
+</pre>

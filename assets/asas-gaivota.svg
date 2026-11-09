@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 750" fill="none">
+  <defs>
+    <linearGradient id="azul" x1="90" y1="70" x2="715" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#0E2F3A"/><stop offset="1" stop-color="#155C5A"/></linearGradient>
+    <linearGradient id="petroleo" x1="25" y1="240" x2="709" y2="451" gradientUnits="userSpaceOnUse"><stop stop-color="#086076"/><stop offset="1" stop-color="#0E2F3A"/></linearGradient>
+    <linearGradient id="verde" x1="90" y1="440" x2="660" y2="670" gradientUnits="userSpaceOnUse"><stop stop-color="#1B7E76"/><stop offset=".55" stop-color="#2CB38D"/><stop offset="1" stop-color="#4EC5A1"/></linearGradient>
+  </defs>
+  <path d="M101 27C270 218 389 230 550 305C625 340 681 386 730 434C598 341 469 338 353 306C192 263 118 185 101 27Z" fill="url(#azul)"/>
+  <path d="M25 206C167 340 351 336 500 368C590 388 654 417 709 451C568 389 486 397 372 414C204 439 62 437 25 206Z" fill="url(#petroleo)"/>
+  <g fill="url(#verde)">
+    <path d="M81 438C202 490 310 431 426 426C516 418 600 435 682 462C530 431 474 503 341 541C210 583 137 548 81 438Z"/>
+    <path d="M183 608C332 619 474 445 672 484C556 511 494 552 398 622C299 692 219 687 183 608Z"/>
+    <path d="M350 704C466 666 526 561 658 522C565 584 531 674 473 701C435 717 390 725 350 704Z"/>
+  </g>
+</svg>

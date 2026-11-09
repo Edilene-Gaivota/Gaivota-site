@@ -1,0 +1,67 @@
+<!doctype html><meta charset="utf-8"><pre>(()=&gt;{
+ const $=s=&gt;document.querySelector(s),list=$('#journal-list'),status=$('#journal-status'),search=$('#journal-search'),filters=[...document.querySelectorAll('[data-topic]')],dialog=$('#journal-article'),box=$('#journal-article-content'),newsList=$('#journal-news-list'),newsStatus=$('#journal-news-status'),newsMore=$('#journal-news-more'),check=$('#journal-news-check');
+ let authored=[],official=[],items=[],topic='',opener,showAllNews=false,checkedAt=null,loading=false,initial=true,lastNews='',newsFailed=false,dirty=false;
+ const labels={'proposta':'Em discussão','norma-aprovada':'Norma aprovada · confira a transição','em-vigor':'Em vigor','cronograma':'Cronograma técnico','comunicado':'Comunicado oficial'};
+ const topics={'Construção civil':'Regularização de obras','Previdência':'Previdência','Trabalhista e eSocial':'Empresas e trabalho','Obrigações fiscais':'Rotina fiscal'};
+ const make=(tag,cls,text)=&gt;{const e=document.createElement(tag);e.className=cls||'';if(text!==undefined)e.textContent=text;return e;};
+ const normalized=s=&gt;String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+ const date=n=&gt;new Intl.DateTimeFormat('pt-BR',{day:'numeric',month:'long',year:'numeric',timeZone:'America/Sao_Paulo'}).format(typeof n==='string'?new Date(n+'T12:00:00Z'):n);
+ const timestamp=n=&gt;typeof n==='string'?Date.parse(n+'T12:00:00Z'):n;
+ const byline=i=&gt;i.automatic?'Resumo automático · Fonte: '+i.sourceName:'Por Edilene Gaivota';
+ function close(){dialog.close();const url=new URL(location.href);url.searchParams.delete('artigo');history.replaceState(null,'',url);opener?.focus();}
+ function sourceLink(i){const p=make('p','portal-meta'),a=make('a','',i.automatic?'Fonte oficial: '+i.sourceName:'Consultar a fonte oficial');a.href=i.sourceUrl;a.target='_blank';a.rel='noopener noreferrer';p.append(a);return p;}
+ function open(item,button){
+  opener=button;box.replaceChildren();
+  box.append(make('p','portal-meta',item.category+' · '+(item.dateKind==='updated'?'Documento atualizado em ':'Publicado em ')+date(item.publishedAt)),Object.assign(make('h2','',item.title),{id:'journal-article-title'}),make('p','portal-meta',byline(item)));
+  if(item.automatic)box.append(make('p','news-state',labels[item.status]||'Comunicado oficial'));
+  box.append(make('p','',item.summary));
+  (Array.isArray(item.body)?item.body:item.body.split(/\n\s*\n/)).forEach(p=&gt;box.append(make('p','',p)));
+  if(item.automatic){const impact=make('aside','portal-note');impact.append(make('h3','','O que isso pode mudar na rotina'),make('p','',item.impact));box.append(impact);if(item.effectiveAt)box.append(make('p','portal-meta','Vigência informada: '+date(item.effectiveAt)+'. Confira o alcance e as condições no texto.'));}
+  if(item.question&amp;&amp;item.answer){const d=make('details'),s=make('summary','',item.question);d.append(s,make('p','',item.answer));box.append(d);}
+  if(item.perspective){const aside=make('aside','portal-note');aside.append(make('h3','','Meu olhar sobre o assunto'),make('p','',item.perspective));box.append(aside);}
+  if(item.sourceUrl)box.append(sourceLink(item));
+  dialog.showModal();const url=new URL(location.href);url.searchParams.set('artigo',item.id);history.replaceState(null,'',url);
+ }
+ function cardFor(item,news=false){
+  const card=make('article','portal-card'+(item.featured?' featured':'')+(news?' portal-news-card':'')),button=make('button','',news?'Entender a notícia':'Continuar a leitura');button.type='button';button.setAttribute('aria-label',(news?'Entender a notícia: ':'Continuar a leitura: ')+item.title);button.addEventListener('click',()=&gt;open(item,button));
+  const priority=item.automatic&amp;&amp;item.activePriority&gt;=3?'ATENÇÃO AO PRAZO · ':item.featured?'EM DESTAQUE · ':'';
+  card.append(make('p','portal-meta',priority+item.category+' · '+(item.dateKind==='updated'?'Atualização: ':'')+date(item.publishedAt)));
+  if(item.automatic)card.append(make('span','news-state',labels[item.status]||'Comunicado oficial'));
+  card.append(make('h3','',item.title),make('p','',item.summary),make('p','portal-meta',byline(item)),button);return card;
+ }
+ function renderNews(news,filtered){
+  newsList.replaceChildren();newsStatus.textContent=news.length===1?'1 notícia':news.length+' notícias';newsMore.hidden=news.length&lt;=3;newsMore.textContent=showAllNews?'Mostrar menos notícias':'Ver todas as notícias';newsMore.setAttribute('aria-expanded',String(showAllNews));
+  if(!news.length){const empty=make('div','portal-news-empty');empty.append(make('h3','',filtered?'Nenhuma notícia com esses filtros.':'Aguardando as próximas notícias.'),make('p','',filtered?'Experimente outro assunto ou outra palavra na busca.':'As novidades oficiais aparecerão aqui após a conferência das fontes.'));newsList.append(empty);return;}
+  news.slice(0,showAllNews?news.length:3).forEach(i=&gt;newsList.append(cardFor(i,true)));
+ }
+ function refreshCheck(){check.textContent=(checkedAt?'Fontes conferidas em '+new Intl.DateTimeFormat('pt-BR',{dateStyle:'short',timeStyle:'short',timeZone:'America/Sao_Paulo'}).format(checkedAt)+' (Brasília).':'Ainda não há uma conferência registrada.')+(newsFailed?' Não foi possível consultar as atualizações agora.':'');}
+ function merge(){const used=new Set(authored.filter(i=&gt;i.sourceUrl).map(i=&gt;i.sourceUrl.replace(/\/$/,'')));items=[...authored,...official.filter(i=&gt;!used.has(i.sourceUrl.replace(/\/$/,''))).map(i=&gt;({...i,id:'oficial-'+i.slug,kind:'news',automatic:true,featured:i.activePriority&gt;=2}))];}
+ function render(){
+  const term=normalized(search.value.trim()),found=items.filter(i=&gt;(!topic||i.category===topic||topics[i.category]===topic||(topic==='INSS de obras'&amp;&amp;i.category==='Construção civil'&amp;&amp;/sero|inss|previd/i.test(i.title+' '+i.summary)))&amp;&amp;(!term||normalized(i.title+' '+i.summary+' '+i.body+' '+(i.question||'')+' '+(i.answer||'')).includes(term)));
+  const news=found.filter(i=&gt;i.kind==='news').sort((a,b)=&gt;(b.automatic?b.activePriority:(b.featured?2:0))-(a.automatic?a.activePriority:(a.featured?2:0))||timestamp(b.publishedAt)-timestamp(a.publishedAt));
+  renderNews(news,!!(topic||term));refreshCheck();
+  const articles=found.filter(i=&gt;i.kind!=='news');list.replaceChildren();status.textContent=articles.length===1?'1 publicação':articles.length?articles.length+' publicações':'Nenhuma publicação'+(topic?' neste assunto':'')+(term?' para esta busca':'')+'.';
+  if(!articles.length){const card=make('div','portal-empty'),mark=make('span','portal-empty-mark','“'),content=make('div');mark.setAttribute('aria-hidden','true');content.append(make('h3','',authored.some(i=&gt;i.kind!=='news')?'Vamos tentar outro caminho?':topic?'Este assunto terá seu espaço.':'Nossa primeira leitura está por vir.'),make('p','',authored.some(i=&gt;i.kind!=='news')?'Não há publicações com esses filtros. Experimente outro assunto ou uma palavra diferente.':'Ainda não publiquei textos'+(topic?' sobre '+topic:' por aqui')+'. Em breve, este espaço vai reunir perguntas e minha perspectiva sobre o que acontece na prática.'));if(term||topic){const reset=make('button','','Ver todos os assuntos');reset.type='button';reset.addEventListener('click',()=&gt;{topic='';search.value='';filters.forEach(b=&gt;b.setAttribute('aria-pressed',String(!b.dataset.topic)));render();});content.append(reset);}card.append(mark,content);list.append(card);return;}
+  articles.forEach(i=&gt;list.append(cardFor(i)));
+ }
+ async function fetchJson(url){const r=await fetch(url,{cache:'no-store',signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error();return r.json();}
+ async function load(){
+  if(loading)return;loading=true;
+  try{
+   const [journal,feed]=await Promise.allSettled([fetchJson('/api/journal'),fetchJson('/api/news')]);
+   let changed=initial||dirty;
+   if(journal.status==='fulfilled'){changed||=JSON.stringify(authored)!==JSON.stringify(journal.value.items);authored=journal.value.items;}
+   newsFailed=feed.status!=='fulfilled';
+   if(!newsFailed){const signature=JSON.stringify(feed.value.items);changed||=signature!==lastNews;official=feed.value.items;lastNews=signature;checkedAt=feed.value.checkedAt;}
+   merge();
+   // Do not replace a focused card or interrupt an open article during polling.
+   if(changed&amp;&amp;!dialog.open&amp;&amp;!newsList.contains(document.activeElement)&amp;&amp;!list.contains(document.activeElement)){render();dirty=false;}else{dirty=changed;refreshCheck();}
+   if(journal.status!=='fulfilled')status.textContent='As publicações autorais estão indisponíveis no momento.';
+   if(newsFailed&amp;&amp;!official.length){newsStatus.textContent='Notícias indisponíveis no momento.';newsList.replaceChildren(make('p','','Não foi possível consultar as notícias. Uma nova tentativa será feita em instantes.'));}
+   if(initial){const item=items.find(i=&gt;i.id===new URL(location.href).searchParams.get('artigo'));if(item)open(item);initial=false;}
+  }finally{loading=false;}
+ }
+ newsMore.addEventListener('click',()=&gt;{showAllNews=!showAllNews;render();});filters.forEach(b=&gt;b.addEventListener('click',()=&gt;{topic=b.dataset.topic;filters.forEach(t=&gt;t.setAttribute('aria-pressed',String(t===b)));render();}));search.addEventListener('input',render);dialog.querySelector('.article-close').addEventListener('click',close);dialog.addEventListener('cancel',e=&gt;{e.preventDefault();close();});dialog.addEventListener('click',e=&gt;{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX&lt;r.left||e.clientX&gt;r.right||e.clientY&lt;r.top||e.clientY&gt;r.bottom)close();}});fetch('/api/feedback/session',{cache:'no-store'}).then(r=&gt;r.json()).then(d=&gt;{$('#journal-owner-link').hidden=!d.owner;}).catch(()=&gt;{});
+ document.addEventListener('visibilitychange',()=&gt;{if(!document.hidden)load();});setInterval(()=&gt;{if(!document.hidden)load();},60000);load();
+})();
+</pre>

@@ -1,0 +1,41 @@
+(() => {
+  const form=document.querySelector('#feedback-form'); if(!form)return;
+  const message=document.querySelector('#feedback-message'), name=document.querySelector('#feedback-name'), consent=document.querySelector('#feedback-publish');
+  const preview=document.querySelector('#feedback-preview'), previewText=document.querySelector('#feedback-preview-text'), send=document.querySelector('#feedback-send'), edit=document.querySelector('#feedback-edit');
+  const clear=document.querySelector('#feedback-clear'), error=document.querySelector('#feedback-error'), saveError=document.querySelector('#feedback-save-error'), success=document.querySelector('#feedback-success');
+  const choices=[...form.querySelectorAll('[name="feedback-choice"]')], steps=[...document.querySelectorAll('.feedback-steps li')], complement=form.querySelector('.feedback-complement');
+  let payload=null,reviewOpener,submitting=false;
+  function submissionId(){if(crypto.randomUUID)return crypto.randomUUID();const b=crypto.getRandomValues(new Uint8Array(16));b[6]=(b[6]&15)|64;b[8]=(b[8]&63)|128;const h=[...b].map(v=>v.toString(16).padStart(2,'0')).join('');return `${h.slice(0,8)}-${h.slice(8,12)}-${h.slice(12,16)}-${h.slice(16,20)}-${h.slice(20)}`;}
+  const selectedChoices=()=>choices.filter(input=>input.checked);
+  function updateSelection(){const count=selectedChoices().length;choices.forEach(input=>input.closest('label').classList.toggle('is-selected',input.checked));document.querySelector('#feedback-selection-count').textContent=count?`${count} ${count===1?'opção selecionada':'opções selecionadas'}`:'Nenhuma opção selecionada';clear.hidden=!count;document.querySelector('#feedback-count').textContent=`${message.value.length}/1500`;}
+  function clearError(){error.hidden=true;error.textContent='';[choices[0],message,name].forEach(el=>el.removeAttribute('aria-invalid'));}
+  function setStep(review){steps.forEach((step,index)=>{if(index===Number(review))step.setAttribute('aria-current','step');else step.removeAttribute('aria-current');step.classList.toggle('is-complete',review&&index===0);});form.hidden=review;preview.hidden=!review;}
+  function showError(text,target){error.textContent=text;error.hidden=false;target.setAttribute('aria-invalid','true');target.focus();}
+  clear.addEventListener('click',()=>{choices.forEach(input=>input.checked=false);payload=null;clearError();updateSelection();choices[0].focus({preventScroll:true});});
+  form.addEventListener('input',()=>{clearError();payload=null;updateSelection();});
+  form.addEventListener('submit',event=>{
+    event.preventDefault();clearError();const selected=selectedChoices(),text=message.value.trim();
+    if(!selected.length&&!text){showError('Selecione pelo menos uma opção ou, se preferir, escreva um comentário.',choices[0]);return;}
+    if(!selected.length&&text.length<3){complement.open=true;showError('Escreva um comentário com pelo menos 3 caracteres ou selecione uma opção acima.',message);return;}
+    if(message.value.length>1500||name.value.length>80){complement.open=true;showError('Confira o limite dos campos: 1.500 caracteres no comentário e 80 no nome.',message.value.length>1500?message:name);return;}
+    payload={id:submissionId(),choices:selected.map(input=>input.value),comment:text,name:name.value.trim(),publish:consent.checked,website:document.querySelector('#feedback-website').value};
+    const lines=[];if(payload.name)lines.push(`Nome: ${payload.name}`);if(selected.length)lines.push(...payload.choices.map(value=>`• ${value}`));if(text)lines.push('',text);
+    previewText.textContent=lines.join('\n');document.querySelector('#feedback-visibility').textContent=payload.publish?'Você autorizou a exibição desta avaliação e do nome informado na aba do site.':'Esta avaliação ficará reservada à Gaivota e não aparecerá na aba do site.';
+    saveError.hidden=true;reviewOpener=selected[0]||message;setStep(true);document.querySelector('#feedback-preview-title').focus({preventScroll:true});preview.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'center'});
+  });
+  edit.addEventListener('click',()=>{if(submitting)return;setStep(false);payload=null;(reviewOpener||choices[0]).focus();});
+  send.addEventListener('click',async()=>{
+    if(submitting||!payload)return;submitting=true;send.disabled=true;edit.disabled=true;send.textContent='Salvando…';preview.setAttribute('aria-busy','true');saveError.hidden=true;
+    try{
+      const response=await fetch('/api/feedback',{method:'POST',headers:{'Content-Type':'application/json','X-Gaivota-Feedback':'1'},body:JSON.stringify(payload),signal:AbortSignal.timeout(15000)});
+      const data=await response.json();if(!response.ok)throw new Error(data.error||'Não consegui salvar agora. Tente novamente.');
+      preview.hidden=true;success.hidden=false;steps.forEach(step=>{step.classList.add('is-complete');step.removeAttribute('aria-current');});
+      document.querySelector('#feedback-success-visibility').textContent=data.publish?'Sua avaliação também poderá aparecer na aba de experiências do site.':'Sua avaliação foi recebida de forma reservada.';
+      document.querySelector('#feedback-success-title').focus();document.dispatchEvent(new CustomEvent('feedback:saved'));form.reset();updateSelection();payload=null;
+    }catch(e){saveError.textContent=e.name==='TimeoutError'||e.name==='AbortError'?'A confirmação demorou. Tente novamente: o site evita salvar a mesma avaliação duas vezes.':e.message==='Failed to fetch'?'Não foi possível conectar. Sua avaliação continua aqui; tente novamente.':e.message;saveError.hidden=false;}
+    finally{submitting=false;send.disabled=false;edit.disabled=false;send.textContent='Salvar minha avaliação';preview.removeAttribute('aria-busy');}
+  });
+  document.querySelector('#feedback-again').addEventListener('click',()=>{success.hidden=true;setStep(false);complement.open=false;clearError();choices[0].focus();});
+  fetch('/api/feedback/session',{cache:'no-store'}).then(r=>r.json()).then(data=>{document.querySelector('#feedback-admin-link').hidden=!data.owner;}).catch(()=>{});
+  updateSelection();
+})();
