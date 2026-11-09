@@ -1,4 +1,4 @@
-name: Capturar interface original Gaivota
+name: Finalizar e validar previa fiel Gaivota
 on:
   push:
     branches:
@@ -8,23 +8,39 @@ on:
 permissions:
   contents: write
 jobs:
-  capture:
+  finalize:
     runs-on: ubuntu-24.04
-    timeout-minutes: 8
-    env:
-      CF_PAGES_BRANCH: previa-fiel-chat
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
           ref: previa-fiel-chat
-      - name: Capturar HTML estilos scripts e imagens originais
-        run: node migration/capture.mjs
-      - name: Registrar arquivos recuperados somente na previa
+      - name: Preservar arquivos originais e preparar dados publicos independentes
+        run: node migration/finalize.mjs
+      - name: Registrar somente a previa sem alterar producao
         shell: bash
         run: |
           git config user.name 'Gaivota migration'
           git config user.email 'migration@users.noreply.github.com'
-          git add index.html blog assets '*.css' '*.js' __migration _headers robots.txt
-          git diff --cached --quiet && exit 0
-          git commit -m 'Recuperar interface original sem redesenho - somente previa'
-          git push origin HEAD:previa-fiel-chat
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m 'Finalizar copia fiel: arquivos originais, dados publicos e verificacao de integridade'
+            git push origin HEAD:previa-fiel-chat
+          fi
+      - name: Preparar navegador para comparacao visual
+        shell: bash
+        run: |
+          python3 -m venv "$RUNNER_TEMP/qa-venv"
+          "$RUNNER_TEMP/qa-venv/bin/pip" install playwright
+          "$RUNNER_TEMP/qa-venv/bin/python" -m playwright install --with-deps chromium
+      - name: Comparar original e previa em desktop e celular
+        shell: bash
+        run: '"$RUNNER_TEMP/qa-venv/bin/python" migration/visual_qa.py'
+      - name: Guardar capturas de tela e resultados verificaveis
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gaivota-comparacao-visual
+          path: ${{ runner.temp }}/gaivota-qa
+          if-no-files-found: warn
+          retention-days: 7
