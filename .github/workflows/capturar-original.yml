@@ -1,0 +1,80 @@
+name: Capturar arquivos publicos do site original
+on:
+  push:
+    branches: [previa-fiel-chat]
+    paths: [.github/workflows/capturar-original.yml]
+permissions:
+  contents: write
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: previa-fiel-chat
+      - name: Recuperar HTML e recursos reais sem redesenhar
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from urllib.request import Request, urlopen
+          from urllib.parse import urljoin, urlsplit, unquote
+          from html.parser import HTMLParser
+          from pathlib import Path
+          import json, hashlib, re, datetime
+          ORIGIN='https://gaivota-regularizacao-obras.contato962298.chatgpt.site'
+          ROOT=Path('_migration/original')
+          ROOT.mkdir(parents=True, exist_ok=True)
+          report={'origin':ORIGIN,'captured_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'pages':[],'resources':[],'errors':[]}
+          queue=[]
+          class Links(HTMLParser):
+              def handle_starttag(self, tag, attrs):
+                  a=dict(attrs)
+                  value=None
+                  if tag in ['img','script','source']: value=a.get('src')
+                  elif tag=='link' and any(x in a.get('rel','') for x in ['stylesheet','icon','preload','modulepreload']): value=a.get('href')
+                  if value: queue.append((value,self.base))
+          def get(url):
+              req=Request(url,headers={'User-Agent':'Gaivota-owned-site-migration/1.0','Accept-Encoding':'identity'})
+              with urlopen(req,timeout=40) as r:
+                  if urlsplit(r.url).netloc!=urlsplit(ORIGIN).netloc: raise ValueError('Unexpected external redirect: '+r.url)
+                  data=r.read(20000000)
+                  return data,r.headers.get_content_type(),r.url
+          for route,filename in [('/','index.html'),('/blog','blog/index.html')]:
+              url=ORIGIN+route
+              try:
+                  data,kind,final=get(url)
+                  if kind!='text/html': raise ValueError('Unexpected HTML content type '+kind)
+                  text=data.decode('utf-8')
+                  target=ROOT/filename;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
+                  parser=Links();parser.base=final;parser.feed(text)
+                  report['pages'].append({'url':url,'path':filename,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'inline_styles':[len(s) for s in re.findall(r'<style[^>]*>(.*?)</style>',text,re.S|re.I)],'inline_scripts':[len(s) for s in re.findall(r'<script[^>]*>(.*?)</script>',text,re.S|re.I)]})
+              except Exception as e: report['errors'].append({'url':url,'error':str(e)})
+          seen=set()
+          while queue and len(seen)<100:
+              rel,base=queue.pop(0);url=urljoin(base,rel);p=urlsplit(url)
+              if p.netloc!=urlsplit(ORIGIN).netloc or p.scheme!='https' or url in seen: continue
+              seen.add(url)
+              if not p.path or '..' in unquote(p.path).split('/'): continue
+              try:
+                  data,kind,final=get(url)
+                  if kind=='text/html': raise ValueError('Resource returned HTML; not copying')
+                  path=p.path.lstrip('/');target=ROOT/path;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
+                  report['resources'].append({'url':url,'path':path,'type':kind,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
+                  if kind=='text/css' or path.endswith('.css'):
+                      text=data.decode('utf-8')
+                      for match in re.findall(r'url\(\s*[\"\']?([^\)\"\']+)',text):
+                          if not match.startswith(('data:','#')): queue.append((match,final))
+              except Exception as e: report['errors'].append({'url':url,'error':str(e)})
+          Path('_migration/capture-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(json.dumps(report,ensure_ascii=False,indent=2))
+          if not report['pages']: raise SystemExit('No HTML recovered')
+          PY
+      - name: Guardar captura apenas na branch de previa
+        run: |
+          git config user.name 'Gaivota migration'
+          git config user.email 'migration@users.noreply.github.com'
+          git add _migration
+          git diff --cached --quiet && exit 0
+          git commit -m 'Guardar HTML e recursos publicos originais com hashes de verificacao'
+          git push origin HEAD:previa-fiel-chat
