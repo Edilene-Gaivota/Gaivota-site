@@ -4,8 +4,9 @@
   "private": true,
   "description": "Captura estática fiel do site original para avaliação em branch separada",
   "scripts": {
-    "postinstall": "node migration/capture.mjs",
-    "build": "node migration/capture.mjs"
+    "build": "node -e \"console.log('Site estático: arquivos originais já recuperados')\""
   },
-  "engines": { "node": ">=18.17" }
+  "engines": {
+    "node": ">=18.17"
+  }
 }

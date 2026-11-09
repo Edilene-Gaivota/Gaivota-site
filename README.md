@@ -1,26 +1,15 @@
-# Gaivota Consultoria Contábil — versão Cloudflare Pages
+# Gaivota — prévia fiel do site original
 
-Site independente publicado em **https://gaivota-regularizacao-obras.pages.dev/**.
+Esta branch preserva os arquivos públicos reais do site original. Não é um redesenho. A branch main e a publicação de produção não foram modificadas.
 
-## Implantação
-- Repositório GitHub `Edilene-Gaivota/Gaivota-site`, branch `main`.
-- Cloudflare Pages conectado ao GitHub; sem framework e sem comando de build.
-- `index.html`, `style.css` e `script.js`: página inicial e interações.
-- `blog/index.html`: blog independente com 19 manchetes históricas (até outubro/2026), busca e filtros; **não é feed de notícias em tempo real**.
+## Publicação
+Os arquivos já estão recuperados neste repositório: não é necessário acessar o site original para servir esta cópia. Não há compilação obrigatória.
 
-## O que foi reproduzido
-Layout responsivo em verde #2CB38D e roxo #4B345D, seção de serviços, formação, treinamentos, jornada do atendimento, perguntas frequentes, integração com WhatsApp empresarial e formulário que prepara mensagem no WhatsApp.
+## Verificação
+Consulte migration/verification.json: hashes SHA-256 dos estilos, scripts e imagens originais; cópia datada dos dados públicos.
 
-## Limites da migração
-Este repositório é uma **reconstrução**, não um backup/exportação integral da aplicação ChatGPT original.
-- Elementos gráficos foram aproximados. O logotipo e as fotografias originais não foram migrados fielmente.
-- Notícias foram preservadas como títulos históricos; sem sincronização automática. Apenas links de fontes que puderam ser confirmados são apresentados.
-- A área administrativa de avaliações e o editor interno do blog são privados e **não foram importados**.
-- O formulário de avaliação **não armazena** dados em banco e encaminha informações somente quando a pessoa confirma o WhatsApp.
-- Alguns efeitos visuais e movimentos podem diferir do site original.
+## Limitações
+Avaliações não são gravadas nesta prévia. Editor do blog e administração autenticada pendentes. Notícias usam fotografia datada dos dados públicos e não se atualizam automaticamente. Áreas privadas e dados não públicos não foram copiados.
 
 ## Manutenção
-Edite arquivos na branch `main`. A Cloudflare Pages publica automaticamente as alterações após um deploy bem-sucedido. Confira o histórico de deploys no painel antes de compartilhar o site.
-
-## Segurança
-Evite inserir senhas, tokens ou dados de clientes nos arquivos. Para administrar artigos e avaliações com persistência, integre um CMS e armazenamento externos com autenticação e política de privacidade adequada.
+Modifique os arquivos desta branch para testar; somente depois da validação visual a cópia deve ser integrada à main. A captura automática não roda em instalações. Os utilitários de migration são ferramentas explícitas para recuperar uma versão do original, não dependências do site em execução.

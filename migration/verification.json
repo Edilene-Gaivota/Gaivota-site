@@ -1,0 +1,177 @@
+{
+  "capturedAt": "2026-11-09T18:30:09.035Z",
+  "finalizedAt": "2026-11-09T18:38:01.736Z",
+  "source": "https://gaivota-regularizacao-obras.contato962298.chatgpt.site",
+  "branch": "previa-fiel-chat",
+  "productionModified": false,
+  "verifiedOriginalFiles": [
+    {
+      "path": "assets/favicon-asas-gaivota.png",
+      "bytes": 662449,
+      "sha256": "eaa04806d9a743e744e20ca427b4558a8c1eba0e2bd4ede7c5fced779a9b8fee"
+    },
+    {
+      "path": "style.css",
+      "bytes": 22551,
+      "sha256": "409bb0aa254989794cbf4c954b283cb63886e20164138f7d9e16019dd8d0c406"
+    },
+    {
+      "path": "experience.css",
+      "bytes": 29458,
+      "sha256": "6b0e458af2909a6541e1e55e316d364fda04b717b6d15ebd54613de364314ad0"
+    },
+    {
+      "path": "explore.css",
+      "bytes": 14758,
+      "sha256": "5ef907667d2510e1ec8d79d8047e63f1b05b8b51dd593cdf31d71e14f3338d8a"
+    },
+    {
+      "path": "learning.css",
+      "bytes": 5396,
+      "sha256": "87c9aee74640a5e14cd996590e9d9ee99c813097d4b63a961d4651893f2697e2"
+    },
+    {
+      "path": "editorial.css",
+      "bytes": 14087,
+      "sha256": "8ce63edc60ad68048cff924a8afb1c9583acb4cab310bb0715d7001c1ed5b96c"
+    },
+    {
+      "path": "palette.css",
+      "bytes": 7238,
+      "sha256": "a0124fe57b2acc7c145c92abb2f7d973b2afd3168631fe08383981f4776f70a7"
+    },
+    {
+      "path": "assets/logo.png",
+      "bytes": 687017,
+      "sha256": "f3030db1ebf660bf3923581f8ef54f9fad2579f1861a19b1738dcc6804cad55a"
+    },
+    {
+      "path": "assets/predio-em-linhas.png",
+      "bytes": 1336602,
+      "sha256": "404c82782e8b9dd3122b71bfcaa220c3b7f0730fcb457ee0171ef9c0a3c850aa"
+    },
+    {
+      "path": "assets/planejamento-tecnico.svg",
+      "bytes": 1256,
+      "sha256": "2fe120186200aa825084f23f5f3203ddaba06159537cf89d3629d078e07b66d1"
+    },
+    {
+      "path": "assets/analise-documental.svg",
+      "bytes": 1365,
+      "sha256": "50848a1e7378551d3f3974aa0374a416de64f6c67d5ff4aac2b7c3687a13a531"
+    },
+    {
+      "path": "assets/acompanhamento-tecnico.svg",
+      "bytes": 1167,
+      "sha256": "35ca42cc1f7145ba2c00b82128e6ff9bb246ad012adb7394591542f54ee744bd"
+    },
+    {
+      "path": "assets/conversa-profissional.svg",
+      "bytes": 1261,
+      "sha256": "acced353a4b9a20a04cf587998d4c7f79755e6977844bedf424bb3bbced3b844"
+    },
+    {
+      "path": "assets/simbolo-gaivota.png",
+      "bytes": 2019260,
+      "sha256": "0d626f8df8bec661003ce5cf38eb65415ab367982fe4b3eebabde783dfc0edb7"
+    },
+    {
+      "path": "assets/logo-rodape.png",
+      "bytes": 757753,
+      "sha256": "922dfae207f1eee8ecbdfc7a19bc03168918595cc725f9f815d725a34a599734"
+    },
+    {
+      "path": "app.js",
+      "bytes": 8268,
+      "sha256": "7103be8ca9c2bce019a8e4243f58cb082e71a45192fd31330ccdaa6a17a3cd76"
+    },
+    {
+      "path": "experience.js",
+      "bytes": 4810,
+      "sha256": "6f9cb7d6804cb973002728c63a54ea3a25911863000283c937aa9a74bb923d76"
+    },
+    {
+      "path": "feedback.js",
+      "bytes": 6196,
+      "sha256": "c4e61b59a339e595955404642d04668f0e1243e94b2fc8226bb7b8a6edb2c0f6"
+    },
+    {
+      "path": "faq.js",
+      "bytes": 3741,
+      "sha256": "617907ea305b6a98863c12267cd2a6d5bf88a51acc760f281c5ee9848c3d32a7"
+    },
+    {
+      "path": "trajectory.js",
+      "bytes": 3991,
+      "sha256": "aaaba068fe29fa4da653c17eb8c720ddf68533c17dabb602ad81cbb79e0b31e4"
+    },
+    {
+      "path": "explore.js",
+      "bytes": 11771,
+      "sha256": "b38733180b1178d6d470e59f40b238547c785701290e5ee3b319702b5b39660e"
+    },
+    {
+      "path": "journal-preview.js",
+      "bytes": 1020,
+      "sha256": "25bd5f308eefc2d34aa7ca3fe9723e8caea487279eaf8fc7ecca77464a5416ef"
+    },
+    {
+      "path": "journal-news.css",
+      "bytes": 3110,
+      "sha256": "9f995561ec849a079a0fc91270ac1851d0ea809587d411a171a3aa6b15102f38"
+    },
+    {
+      "path": "journal.js",
+      "bytes": 9784,
+      "sha256": "755ed916f761b5564c734678ac75afa9fc6ff69c4ab1bb31b3bcea78881c5e72"
+    },
+    {
+      "path": "assets/asas-gaivota.svg",
+      "bytes": 1312,
+      "sha256": "68032199bce8120cf0a01db0d27a28b469df8fbf278440a88a42e4384998573f"
+    }
+  ],
+  "publicData": [
+    {
+      "route": "/api/journal",
+      "file": "data/journal.json",
+      "ok": true,
+      "sha256": "3a42d346c00ddcf61ff8b82dfe2cd58419f7fdddc203eaec775dd5582468d937",
+      "items": 0
+    },
+    {
+      "route": "/api/news",
+      "file": "data/news.json",
+      "ok": true,
+      "sha256": "62c61a9550e1408e7fbf9ec112f374579ea928df06dda74e9a378dda2f35b5be",
+      "items": 19
+    },
+    {
+      "route": "/api/feedback",
+      "file": "data/feedback.json",
+      "ok": true,
+      "sha256": "3a42d346c00ddcf61ff8b82dfe2cd58419f7fdddc203eaec775dd5582468d937",
+      "items": 0
+    },
+    {
+      "route": "/gallery.json",
+      "file": "gallery.json",
+      "ok": true,
+      "sha256": "e696cef6bcca1250061936c0e0fab01259a5819a06e65446d0f5572f6642a9b9",
+      "items": null
+    }
+  ],
+  "modifications": [
+    "Caminhos locais para a nova hospedagem",
+    "Remoção do desafio temporário de transporte da hospedagem anterior",
+    "Bloqueio de gravações na prévia",
+    "Aviso de prévia no formulário",
+    "Noindex na prévia"
+  ],
+  "pending": [
+    "Armazenamento e moderação autenticada de avaliações",
+    "Editor privado do blog",
+    "Rotina independente de atualização das notícias"
+  ],
+  "newsMode": "snapshot — não há atualização automática de notícias"
+}
