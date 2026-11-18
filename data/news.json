@@ -1,6 +1,123 @@
 {
   "items": [
     {
+      "slug": "simples-nacional-2027-resultado-opcao-20-novembro",
+      "dateKind": "published",
+      "status": "cronograma",
+      "title": "Simples Nacional 2027: resultado das solicitações pode ser consultado a partir de 20/11",
+      "summary": "A Receita Federal orienta a conferir a situação definitiva das solicitações de opção para 2027 a partir de 20 de novembro.",
+      "body": [
+        "O período de opção para 2027 terminou em 15 de outubro, e o prazo de regularização de pendências foi até 30 de outubro de 2026.",
+        "Contribuintes que regularizaram débitos nos últimos dias podem ainda ver indeferimento temporário porque pagamentos e parcelamentos precisam ser processados.",
+        "A partir de 20/11, a consulta deve ser feita no serviço Acompanhamento da Solicitação da Opção pelo Simples Nacional. A orientação não representa abertura de novo prazo para optar."
+      ],
+      "impact": "Empresas e escritórios devem conferir o resultado final, guardar os comprovantes de regularização e verificar eventuais pendências individuais.",
+      "category": "Obrigações fiscais",
+      "publishedAt": "2026-11-13",
+      "sourceName": "Receita Federal — Simples Nacional",
+      "sourceUrl": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/processamento-final-das-solicitacoes-de-opcao-pelo-simples-nacional-para-2027",
+      "priority": 3,
+      "priorityUntil": "2026-11-20",
+      "effectiveAt": null,
+      "archived": false,
+      "activePriority": 3,
+      "updatedAt": 1795024861446
+    },
+    {
+      "slug": "agenda-simples-ret-23-novembro-2026",
+      "dateKind": "published",
+      "status": "cronograma",
+      "title": "Agenda de novembro: Simples Nacional e RET têm obrigações em 23/11",
+      "summary": "A agenda oficial reúne o DAS, o PGDAS-D de outubro e recolhimentos de regimes especiais aplicáveis a incorporações e construções.",
+      "body": [
+        "A Receita Federal publicou, em 27 de outubro, a agenda tributária de 23 de novembro de 2026. Para o Simples Nacional, a página relaciona o pagamento por DAS e a apresentação do PGDAS-D referentes a outubro.",
+        "Na construção civil, o calendário inclui recolhimentos do Regime Especial de Tributação: pagamento unificado das incorporações imobiliárias, modalidades vinculadas ao PMCMV e a creches e pré-escolas, além dos códigos específicos de IRPJ, CSLL, PIS/Pasep e Cofins indicados na tabela.",
+        "Trata-se de um calendário de obrigações existentes, não de aprovação de novo tributo. A aplicação de cada item depende do regime e do enquadramento do contribuinte. A data não deve ser estendida automaticamente a todas as obrigações da empresa; outras entregas e recolhimentos precisam ser conferidos em suas respectivas agendas."
+      ],
+      "impact": "Empresas e responsáveis contábeis podem organizar a apuração de outubro e conferir quais obrigações se aplicam até 23/11.",
+      "category": "Obrigações fiscais",
+      "publishedAt": "2026-10-27",
+      "sourceName": "Receita Federal — Agenda Tributária",
+      "sourceUrl": "https://www.gov.br/receitafederal/pt-br/assuntos/agenda-tributaria/2026/Novembro/dia-23-11-2026",
+      "priority": 3,
+      "priorityUntil": "2026-11-23",
+      "effectiveAt": null,
+      "archived": false,
+      "activePriority": 3,
+      "updatedAt": 1793445647647
+    },
+    {
+      "slug": "fgts-digital-nota-orientativa-12-processos-trabalhistas-2026",
+      "dateKind": "published",
+      "status": "comunicado",
+      "title": "FGTS Digital: nova nota orientativa esclarece recolhimentos em processos trabalhistas",
+      "summary": "A Nota Orientativa nº 12/2026 substituiu a nº 08/2025 e detalha como declarar e recolher FGTS reconhecido em ações e acordos trabalhistas.",
+      "body": [
+        "Publicada em 17/11/2026, a Nota Orientativa FGTS Digital nº 12/2026 trata de valores decorrentes de processos trabalhistas, inclusive acordos perante comissões e núcleos de conciliação.",
+        "A orientação detalha o recolhimento via FGTS Digital nas situações abrangidas pelas regras a partir de 1º/05/2026, com as informações correspondentes declaradas no evento S-2500 do eSocial.",
+        "Para situações de transição e competências anteriores, a nota diferencia hipóteses de utilização do FGTS Digital, da SEFIP e da GRRF segundo o marco do processo, a competência e a data de desligamento.",
+        "Depósito diretamente ao trabalhador não substitui o recolhimento devido na conta vinculada, ainda que conste de acordo judicial."
+      ],
+      "impact": "Departamento pessoal, jurídico e contabilidade devem conferir a tabela da nota antes de escolher a guia e evitar declaração duplicada das bases no eSocial.",
+      "category": "Trabalhista e eSocial",
+      "publishedAt": "2026-11-17",
+      "sourceName": "Ministério do Trabalho e Emprego — FGTS Digital",
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/servicos/empregador/fgtsdigital/comunicados/nova-nota-orientativa-esclarece-recolhimento-do-fgts-em-processos-trabalhistas",
+      "priority": 2,
+      "priorityUntil": "2026-12-15",
+      "effectiveAt": null,
+      "archived": false,
+      "activePriority": 2,
+      "updatedAt": 1795024861446
+    },
+    {
+      "slug": "pgdas-d-fs12-regime-competencia-novembro-2026",
+      "dateKind": "updated",
+      "status": "norma-aprovada",
+      "title": "PGDAS-D: novembro e dezembro exigem atenção à folha dos últimos 12 meses",
+      "summary": "Atualização da Receita exige a informação FS12 em 11/2026 e 12/2026 e prepara as apurações do Simples Nacional pelo regime de competência em 2027.",
+      "body": [
+        "A Receita divulgou a atualização em 13/11/2026 e revisou o comunicado em 16/11. Nos períodos de apuração novembro e dezembro de 2026, o PGDAS-D passa a exigir a folha de salários dos últimos 12 meses (FS12) para todas as atividades do Simples Nacional.",
+        "Nessas competências, deixa de ser necessária a escolha entre regime de caixa e de competência no sistema. Segundo a Receita, a partir de 2027 as apurações serão realizadas pelo regime de competência.",
+        "Os dados informados também apoiarão a determinação das alíquotas efetivas de IBS e CBS a serem indicadas nos documentos fiscais eletrônicos. É preciso conferir a folha e a classificação das receitas antes de transmitir."
+      ],
+      "impact": "Empresas do Simples Nacional, inclusive prestadoras de serviços e construtoras optantes, devem revisar seus cadastros, a FS12 e a integração entre folha, fiscal e PGDAS-D.",
+      "category": "Reforma tributária",
+      "publishedAt": "2026-11-16",
+      "sourceName": "Receita Federal — PGDAS-D",
+      "sourceUrl": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/pgdas-d-e-atualizado-para-atender-a-reforma-tributaria-a-partir-de-novembro-de-2026/",
+      "priority": 2,
+      "priorityUntil": "2026-12-31",
+      "effectiveAt": null,
+      "archived": false,
+      "activePriority": 2,
+      "updatedAt": 1795024861446
+    },
+    {
+      "slug": "nfse-ato-7-2026-prazos-ibs-cbs",
+      "dateKind": "published",
+      "status": "norma-aprovada",
+      "title": "NFS-e e IBS/CBS: ato publicado em novembro redefine prazos para 2027",
+      "summary": "O Ato Conjunto RFB/CGIBS nº 7/2026 alterou prazos de emissão para diferentes operações. As regras variam conforme o serviço e o regime tributário.",
+      "body": [
+        "Publicado em 13/11/2026, o Ato Conjunto RFB/CGIBS nº 7 alterou o Ato nº 4/2026 e transferiu parte das obrigações antes previstas para 1º/12/2026 para 1º/01/2027 ou 1º/03/2027, de acordo com a natureza da operação.",
+        "Entre os casos com previsão para janeiro estão certas locações e cessões de uso de imóveis, receitas condominiais, bens imateriais e serviços residuais. Para plataformas digitais e alguns serviços de tecnologia e transporte, há hipóteses com previsão para março; o Simples Nacional também possui escalonamento próprio.",
+        "O comunicado ressalva que outros marcos anteriores permanecem válidos, inclusive 1º/10/2026 para determinados serviços gerais sujeitos ao ISS. Portanto, não houve adiamento geral para todas as NFS-e.",
+        "O ambiente de testes e os documentos técnicos continuam disponíveis. A preparação de sistemas deve distinguir o prazo legal de emissão das etapas técnicas de homologação."
+      ],
+      "impact": "Prestadores, locadores e equipes fiscais de obras devem identificar corretamente a operação e consultar o enquadramento específico antes de alterar seus cronogramas.",
+      "category": "Reforma tributária",
+      "publishedAt": "2026-11-13",
+      "sourceName": "Portal Nacional da NFS-e — Ato Conjunto RFB/CGIBS nº 7/2026",
+      "sourceUrl": "https://www.gov.br/nfse/pt-br/noticias/cgnfs-e-informa-ato-conjunto-rfb-cgibs-no-7-2026-atualiza-o-cronograma-de-obrigatoriedade-de-emissao-da-nfs-e-para-ibs-e-cbs",
+      "priority": 2,
+      "priorityUntil": "2027-01-01",
+      "effectiveAt": null,
+      "archived": false,
+      "activePriority": 2,
+      "updatedAt": 1795024861446
+    },
+    {
       "slug": "cte-simples-nt-2026-005-outubro",
       "dateKind": "published",
       "status": "cronograma",
@@ -24,62 +141,17 @@
       "updatedAt": 1793453187987
     },
     {
-      "slug": "fgts-deliberacoes-orcamento-saque-aniversario-outubro-2026",
-      "dateKind": "published",
-      "status": "comunicado",
-      "title": "FGTS: Conselho aprova orçamento de 2027 e prorrogação da transição do saque-aniversário",
-      "summary": "MTE divulgou decisões sobre investimentos e antecipação de saques. A notícia registra a deliberação anunciada; a vigência normativa não foi confirmada nesta consulta.",
-      "body": [
-        "Em comunicado de 29 de outubro, o MTE informou que o Conselho do FGTS aprovou R$ 169 bilhões para 2027: R$ 144,5 bilhões em habitação, R$ 8 bilhões em saneamento, R$ 8 bilhões em infraestrutura urbana e R$ 8,5 bilhões em saúde.",
-        "O órgão também anunciou a prorrogação, até 31 de março de 2027, da transição que permite usar até cinco saques-aniversário futuros como garantia de crédito. A redução para três estava prevista para 1º de novembro de 2026.",
-        "Este resumo registra o resultado anunciado pelo Conselho. O texto da nova resolução e sua cláusula de vigência não foram localizados nesta conferência; por isso, não se afirma aqui a entrada em vigor da alteração."
-      ],
-      "impact": "O orçamento interessa à construção civil; trabalhadores devem conferir a formalização das regras antes de contratar antecipações.",
-      "category": "Trabalhista e eSocial",
-      "publishedAt": "2026-10-29",
-      "sourceName": "Ministério do Trabalho e Emprego",
-      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/outubro/conselho-curador-do-fgts-aprova-orcamento-de-r-169-bilhoes-para-investimentos-em-2027",
-      "priority": 2,
-      "priorityUntil": "2026-11-12",
-      "effectiveAt": null,
-      "archived": false,
-      "activePriority": 2,
-      "updatedAt": 1793308870277
-    },
-    {
-      "slug": "ibs-cbs-ato-tecnico-10-documentos-imobiliarios-outubro-2026",
-      "dateKind": "published",
-      "status": "norma-aprovada",
-      "title": "IBS e CBS: ato aprova documentação fiscal, incluindo alienação de imóveis",
-      "summary": "Publicado no DOU de 29/10, o Ato Técnico Conjunto nº 10 aprova especificações de documentos fiscais. A aprovação não estabelece uma implantação simultânea de todos os sistemas.",
-      "body": [
-        "Receita Federal e Comitê Gestor do IBS aprovaram documentação técnica para documentos eletrônicos relacionados ao IBS e à CBS. A lista abrange NF-e, NFC-e, transporte, comunicação, energia, água e gás, além da classificação tributária cClassTrib, versão 1.71.",
-        "Para operações imobiliárias, o ato inclui a NF-e de Alienação de Bens Imóveis, modelo 77: Nota Técnica 2026.001 e Informe Técnico 2026.003, ambos versão 1.00, e tabela de códigos versão 1.01.",
-        "É uma norma aprovada, não uma proposta. O artigo 2º vincula vigência e efeitos à publicação no DOU e no portal do CGIBS. Os prazos operacionais devem ser conferidos nas notas técnicas de cada documento; o ato não fixa uma data única de ativação."
-      ],
-      "impact": "Empresas e equipes fiscais devem identificar os documentos aplicáveis às suas operações e conferir versões e cronogramas com seus fornecedores de sistemas.",
-      "category": "Reforma tributária",
-      "publishedAt": "2026-10-29",
-      "sourceName": "RFB e CGIBS — DOU reproduzido no Portal CT-e",
-      "sourceUrl": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=VKMV8IDTX8A%3D",
-      "priority": 2,
-      "priorityUntil": "2026-11-14",
-      "effectiveAt": null,
-      "archived": false,
-      "activePriority": 2,
-      "updatedAt": 1793456443136
-    },
-    {
       "slug": "nfse-producao-testes-orientacoes-outubro-2026",
       "dateKind": "updated",
       "status": "cronograma",
       "title": "NFS-e: orientações separam emissão oficial, testes e implantação prevista para dezembro",
-      "summary": "Comunicado de 29/10 esclarece a validação dos campos de IBS/CBS e a implantação gradual da NT 009.",
+      "summary": "O comunicado de 29/10 distinguiu testes, produção e regras de preenchimento. A obrigatoriedade de determinadas operações foi posteriormente reprogramada pelo Ato Conjunto nº 7/2026.",
       "body": [
         "O CGNFS-e esclareceu em 29 de outubro que a emissão oficial continua baseada na NT 004, com o complemento da NT 007 indicado no comunicado. A ausência do grupo IBS/CBS não causa rejeição técnica por esse motivo, mas isso não equivale a dispensa da obrigação fiscal.",
         "Quando o grupo é informado, os códigos, classificações e dados correlatos exigidos precisam estar completos, inclusive nos emissores municipais integrados ao Ambiente de Dados Nacional.",
         "O release 1 da NT 009 está em testes, sem efeito fiscal. O portal prevê os releases 1 a 3 em produção em 1º de dezembro de 2026 e informa que divulgará o cronograma formal. Não se trata de implantação já concluída.",
-        "O Anexo VIII continua preliminar, sem regras de negócio associadas em testes ou produção. Este resumo consolida e substitui o destaque anterior sobre a documentação."
+        "O Anexo VIII continua preliminar, sem regras de negócio associadas em testes ou produção. Este resumo consolida e substitui o destaque anterior sobre a documentação.",
+        "Atualização editorial (18/11/2026): o Ato Conjunto RFB/CGIBS nº 7/2026, publicado em 13/11, alterou datas de obrigatoriedade de emissão para operações específicas. A previsão técnica de implantação descrita em outubro não substitui os novos prazos legais, que variam conforme a operação. Consulte a notícia mais recente no blog."
       ],
       "impact": "Prestadores e equipes fiscais devem conferir o ambiente utilizado e alinhar os ajustes com o fornecedor do emissor.",
       "category": "Obrigações fiscais",
@@ -92,50 +164,6 @@
       "archived": false,
       "activePriority": 2,
       "updatedAt": 1793312380249
-    },
-    {
-      "slug": "cbs-calculo-tcu-referencia-outubro-2026",
-      "dateKind": "published",
-      "status": "proposta",
-      "title": "CBS: TCU calcula referência de 11,3%; definição cabe ao Senado",
-      "summary": "O cálculo aprovado pelo TCU é uma etapa técnica. A fixação da alíquota de referência depende de resolução do Senado.",
-      "body": [
-        "Em comunicado de 28 de outubro, o TCU informou ter aprovado o cálculo da alíquota de referência da CBS em 11,3% para 2027. Esse resultado não significa que o percentual já esteja definitivamente fixado pelo Senado.",
-        "Segundo o Tribunal, o cálculo será encaminhado ao Senado até 30 de outubro, com definição da referência prevista até 15 de dezembro. O percentual não corresponde necessariamente à carga efetiva de cada contribuinte."
-      ],
-      "impact": "No planejamento de 2027, acompanhe a decisão do Senado e as regras específicas da atividade antes de aplicar esse percentual às projeções da empresa.",
-      "category": "Reforma tributária",
-      "publishedAt": "2026-10-28",
-      "sourceName": "Tribunal de Contas da União",
-      "sourceUrl": "https://portal.tcu.gov.br/imprensa/noticias/tcu-calcula-aliquota-de-referencia-de-113-para-novo-tributo-sobre-consumo",
-      "priority": 2,
-      "priorityUntil": "2026-11-11",
-      "effectiveAt": null,
-      "archived": false,
-      "activePriority": 2,
-      "updatedAt": 1793297690352
-    },
-    {
-      "slug": "mte-canal-denuncias-assedio-eleitoral-outubro-2026",
-      "dateKind": "published",
-      "status": "comunicado",
-      "title": "MTE disponibiliza canal de denúncias de assédio eleitoral no trabalho",
-      "summary": "Comunicado de 28 de outubro apresenta um canal para relatos de discriminação política no trabalho e anuncia ações conjuntas de prevenção e apuração.",
-      "body": [
-        "O Ministério do Trabalho e Emprego informou que disponibilizou um canal para receber denúncias de pessoas que sofreram ou presenciaram discriminação no ambiente de trabalho relacionada ao voto ou ao posicionamento político.",
-        "A notícia também anuncia orientações pela Carteira de Trabalho Digital e atuação conjunta de instituições. Trata-se de um comunicado sobre serviços e medidas anunciadas, não da publicação de uma nova lei. O anúncio, por si só, não comprova que todas as medidas previstas já estejam implantadas."
-      ],
-      "impact": "O tema merece atenção na comunicação interna e no acolhimento de relatos. A fonte oficial reúne os canais divulgados pelo MTE.",
-      "category": "Trabalhista e eSocial",
-      "publishedAt": "2026-10-28",
-      "sourceName": "Ministério do Trabalho e Emprego",
-      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/outubro/governo-do-brasil-anuncia-medidas-contra-o-assedio-eleitoral-no-trabalho",
-      "priority": 2,
-      "priorityUntil": "2026-11-11",
-      "effectiveAt": null,
-      "archived": false,
-      "activePriority": 2,
-      "updatedAt": 1793297690352
     },
     {
       "slug": "esocial-revisao-tecnica-outubro-2026",
@@ -160,50 +188,96 @@
       "updatedAt": 1793297690352
     },
     {
-      "slug": "jornada-trabalho-ec-141-transicao-2026",
-      "dateKind": "published",
-      "status": "norma-aprovada",
-      "title": "Jornada de trabalho: emenda aprovada estabelece redução em etapas",
-      "summary": "Publicada em 16 de outubro, a EC 141/2026 prevê redução progressiva da jornada e dois dias de repouso remunerado, sem redução salarial. A aplicação não é imediata para todas as regras.",
-      "body": [
-        "O texto promulgado estabelece o limite de 42 horas semanais dois meses após a publicação. Um ano depois dessa primeira etapa, o limite passa a 40 horas.",
-        "A ampliação do repouso semanal entra em vigor após dois meses; os demais dispositivos vigoram desde a publicação, observada a transição. Jornadas já iguais ou inferiores a 40 horas não têm redução proporcional automática.",
-        "Há regras específicas para negociação coletiva, determinados empregados e contratos públicos com mão de obra, inclusive obras públicas. O enquadramento precisa considerar o texto integral."
-      ],
-      "impact": "O planejamento de escalas, custos e contratos deve considerar a transição e as regras específicas aplicáveis à atividade.",
-      "category": "Trabalhista e eSocial",
-      "publishedAt": "2026-10-16",
-      "sourceName": "Câmara dos Deputados — texto original da EC 141/2026",
-      "sourceUrl": "https://www2.camara.leg.br/legin/fed/emecon/2026/emendaconstitucional-141-16-outubro-2026-800062-publicacaooriginal-181622-pl.html",
-      "priority": 2,
-      "priorityUntil": "2026-11-11",
-      "effectiveAt": null,
-      "archived": false,
-      "activePriority": 2,
-      "updatedAt": 1793297690352
-    },
-    {
-      "slug": "agenda-simples-ret-23-novembro-2026",
+      "slug": "nfse-homologacao-novembro-2026-novos-fatos-geradores",
       "dateKind": "published",
       "status": "cronograma",
-      "title": "Agenda de novembro: Simples Nacional e RET têm obrigações em 23/11",
-      "summary": "A agenda oficial reúne o DAS, o PGDAS-D de outubro e recolhimentos de regimes especiais aplicáveis a incorporações e construções.",
+      "title": "NFS-e: homologação testa operações imobiliárias e novos códigos tributários",
+      "summary": "Entre 16 e 19/11, CGNFS-e, Receita, Serpro e municípios testam funcionalidades da reforma tributária; homologação não equivale à entrada em produção.",
       "body": [
-        "A Receita Federal publicou, em 27 de outubro, a agenda tributária de 23 de novembro de 2026. Para o Simples Nacional, a página relaciona o pagamento por DAS e a apresentação do PGDAS-D referentes a outubro.",
-        "Na construção civil, o calendário inclui recolhimentos do Regime Especial de Tributação: pagamento unificado das incorporações imobiliárias, modalidades vinculadas ao PMCMV e a creches e pré-escolas, além dos códigos específicos de IRPJ, CSLL, PIS/Pasep e Cofins indicados na tabela.",
-        "Trata-se de um calendário de obrigações existentes, não de aprovação de novo tributo. A aplicação de cada item depende do regime e do enquadramento do contribuinte. A data não deve ser estendida automaticamente a todas as obrigações da empresa; outras entregas e recolhimentos precisam ser conferidos em suas respectivas agendas."
+        "O Comitê Gestor da NFS-e informou em 17/11/2026 uma nova rodada de homologação técnica realizada em Belo Horizonte de 16 a 19 de novembro.",
+        "Os testes incluem operações com locação, cessão onerosa, arrendamento e uso de imóveis, operações condominiais e bens móveis, além de alterações no DANFSE e no identificador da nota.",
+        "A etapa é de validação de funcionalidades. A implementação efetiva e os prazos de obrigação devem ser acompanhados nos atos e cronogramas publicados pelos órgãos responsáveis."
       ],
-      "impact": "Empresas e responsáveis contábeis podem organizar a apuração de outubro e conferir quais obrigações se aplicam até 23/11.",
-      "category": "Obrigações fiscais",
-      "publishedAt": "2026-10-27",
-      "sourceName": "Receita Federal — Agenda Tributária",
-      "sourceUrl": "https://www.gov.br/receitafederal/pt-br/assuntos/agenda-tributaria/2026/Novembro/dia-23-11-2026",
+      "impact": "Empresas e prestadores ligados à construção civil e ao setor imobiliário devem acompanhar os novos tipos de operação e realizar testes em seus sistemas quando aplicável.",
+      "category": "Reforma tributária",
+      "publishedAt": "2026-11-17",
+      "sourceName": "Portal Nacional da NFS-e — CGNFS-e",
+      "sourceUrl": "https://www.gov.br/nfse/pt-br/noticias/comite-gestor-da-nfs-e-realiza-nova-etapa-de-homologacao-de-funcionalidades-para-a-reforma-tributaria-em-belo-horizonte-mg",
       "priority": 1,
-      "priorityUntil": "2026-11-23",
+      "priorityUntil": "2026-11-19",
       "effectiveAt": null,
       "archived": false,
       "activePriority": 1,
-      "updatedAt": 1793445647647
+      "updatedAt": 1795024861446
+    },
+    {
+      "slug": "cbs-rad-documentacao-api-17-novembro-2026",
+      "dateKind": "published",
+      "status": "cronograma",
+      "title": "CBS: Receita divulga documentação da futura API do RAD",
+      "summary": "A documentação técnica já pode ser estudada, mas a Receita esclarece que a API de recolhimento como adquirente ainda não está disponível para integração.",
+      "body": [
+        "Em 17/11/2026, a Receita Federal publicou orientações técnicas sobre a futura API ligada ao Recolhimento na condição de Adquirente (RAD) da CBS.",
+        "A especificação contempla consulta de recolhimentos, geração de DARF na condição de adquirente e integração de sistemas corporativos.",
+        "A publicação disponibiliza somente a documentação. A Receita não informou, nesse comunicado, data definitiva de liberação da API em produção ou de ambiente de testes."
+      ],
+      "impact": "Equipes fiscais e desenvolvedores podem analisar os requisitos e planejar adaptações, sem tratar a ferramenta como serviço já operacional.",
+      "category": "Reforma tributária",
+      "publishedAt": "2026-11-17",
+      "sourceName": "Receita Federal — API de Apuração Assistida da CBS",
+      "sourceUrl": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/virando-a-chave-para-a-reforma-tributaria-api-para-emissao-do-rad-ja-esta-disponivel/",
+      "priority": 1,
+      "priorityUntil": "2026-12-03",
+      "effectiveAt": null,
+      "archived": false,
+      "activePriority": 1,
+      "updatedAt": 1795024861446
+    },
+    {
+      "slug": "cbs-apis-consulta-debitos-creditos-2-0-novembro-2026",
+      "dateKind": "published",
+      "status": "comunicado",
+      "title": "CBS: APIs versão 2.0 permitem consulta de débitos e créditos apurados",
+      "summary": "Receita detalha novas consultas para integração tributária em produção restrita e ambiente de produção beta.",
+      "body": [
+        "Em comunicado de 9/11/2026, a Receita informou que as APIs 2.0 de consulta de débitos e créditos da CBS haviam sido liberadas em 28 de outubro, com dados em ambientes de testes e produção beta.",
+        "A consulta reúne informações da origem e situação de débitos e dos valores de créditos apurados e apropriados, com dados da mesma base da Apuração Assistida de CBS.",
+        "O acesso exige a geração de uma credencial digital. Segundo a Receita, chaves antigas precisam ser canceladas e substituídas pelas novas para utilização das APIs."
+      ],
+      "impact": "Departamentos fiscais e fornecedores de ERP devem planejar integrações e distinguir as informações consultivas dos procedimentos fiscais exigíveis.",
+      "category": "Reforma tributária",
+      "publishedAt": "2026-11-09",
+      "sourceName": "Receita Federal — Apuração Assistida da CBS",
+      "sourceUrl": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/receita-federal-libera-acesso-as-novas-apis-de-apuracao-da-cbs/",
+      "priority": 1,
+      "priorityUntil": "2026-12-05",
+      "effectiveAt": null,
+      "archived": false,
+      "activePriority": 1,
+      "updatedAt": 1795024861446
+    },
+    {
+      "slug": "cno-sero-guia-oficial-regularizacao-obras-2026",
+      "dateKind": "updated",
+      "status": "comunicado",
+      "title": "CNO e SERO: guia oficial explica as etapas de regularização previdenciária da obra",
+      "summary": "A Receita orienta que a obra esteja inscrita no CNO antes da aferição no SERO, procedimento necessário à regularização previdenciária e à emissão da certidão.",
+      "body": [
+        "A página oficial do Sistema Eletrônico para Aferição de Obras (SERO) consta como atualizada em 10/07/2026. O procedimento apura contribuições devidas em razão da execução da obra de construção civil.",
+        "A inscrição da obra no Cadastro Nacional de Obras (CNO) antecede a aferição. Na análise, também devem ser observadas as declarações de remuneração vinculadas à obra e a documentação disponível.",
+        "Após a aferição, são utilizados os procedimentos de declaração e pagamento previstos na Receita para solicitar a certidão de regularidade fiscal da obra. A forma de apuração depende das características do responsável e dos registros da construção."
+      ],
+      "impact": "Proprietários e construtoras devem conferir vínculos ao CNO, folhas, recolhimentos e documentos de suporte para reduzir divergências na aferição final.",
+      "category": "Construção civil",
+      "publishedAt": "2026-07-10",
+      "sourceName": "Receita Federal — Sistema Eletrônico para Aferição de Obras",
+      "sourceUrl": "https://www.gov.br/receitafederal/pt-br/assuntos/construcao-civil/sero",
+      "priority": 1,
+      "priorityUntil": "2027-01-01",
+      "effectiveAt": null,
+      "archived": false,
+      "activePriority": 1,
+      "updatedAt": 1795024861446
     },
     {
       "slug": "nfse-representacao-alternancia-perfis-novembro-2026",
@@ -227,6 +301,52 @@
       "archived": false,
       "activePriority": 0,
       "updatedAt": 1793470722302
+    },
+    {
+      "slug": "fgts-deliberacoes-orcamento-saque-aniversario-outubro-2026",
+      "dateKind": "published",
+      "status": "comunicado",
+      "title": "FGTS: Conselho aprova orçamento de 2027 e prorrogação da transição do saque-aniversário",
+      "summary": "MTE divulgou decisões sobre investimentos e antecipação de saques. A notícia registra a deliberação anunciada; a vigência normativa não foi confirmada nesta consulta.",
+      "body": [
+        "Em comunicado de 29 de outubro, o MTE informou que o Conselho do FGTS aprovou R$ 169 bilhões para 2027: R$ 144,5 bilhões em habitação, R$ 8 bilhões em saneamento, R$ 8 bilhões em infraestrutura urbana e R$ 8,5 bilhões em saúde.",
+        "O órgão também anunciou a prorrogação, até 31 de março de 2027, da transição que permite usar até cinco saques-aniversário futuros como garantia de crédito. A redução para três estava prevista para 1º de novembro de 2026.",
+        "Este resumo registra o resultado anunciado pelo Conselho. O texto da nova resolução e sua cláusula de vigência não foram localizados nesta conferência; por isso, não se afirma aqui a entrada em vigor da alteração."
+      ],
+      "impact": "O orçamento interessa à construção civil; trabalhadores devem conferir a formalização das regras antes de contratar antecipações.",
+      "category": "Trabalhista e eSocial",
+      "publishedAt": "2026-10-29",
+      "sourceName": "Ministério do Trabalho e Emprego",
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/outubro/conselho-curador-do-fgts-aprova-orcamento-de-r-169-bilhoes-para-investimentos-em-2027",
+      "priority": 2,
+      "priorityUntil": "2026-11-12",
+      "effectiveAt": null,
+      "archived": false,
+      "activePriority": 0,
+      "updatedAt": 1793308870277
+    },
+    {
+      "slug": "ibs-cbs-ato-tecnico-10-documentos-imobiliarios-outubro-2026",
+      "dateKind": "published",
+      "status": "norma-aprovada",
+      "title": "IBS e CBS: ato aprova documentação fiscal, incluindo alienação de imóveis",
+      "summary": "Publicado no DOU de 29/10, o Ato Técnico Conjunto nº 10 aprova especificações de documentos fiscais. A aprovação não estabelece uma implantação simultânea de todos os sistemas.",
+      "body": [
+        "Receita Federal e Comitê Gestor do IBS aprovaram documentação técnica para documentos eletrônicos relacionados ao IBS e à CBS. A lista abrange NF-e, NFC-e, transporte, comunicação, energia, água e gás, além da classificação tributária cClassTrib, versão 1.71.",
+        "Para operações imobiliárias, o ato inclui a NF-e de Alienação de Bens Imóveis, modelo 77: Nota Técnica 2026.001 e Informe Técnico 2026.003, ambos versão 1.00, e tabela de códigos versão 1.01.",
+        "É uma norma aprovada, não uma proposta. O artigo 2º vincula vigência e efeitos à publicação no DOU e no portal do CGIBS. Os prazos operacionais devem ser conferidos nas notas técnicas de cada documento; o ato não fixa uma data única de ativação."
+      ],
+      "impact": "Empresas e equipes fiscais devem identificar os documentos aplicáveis às suas operações e conferir versões e cronogramas com seus fornecedores de sistemas.",
+      "category": "Reforma tributária",
+      "publishedAt": "2026-10-29",
+      "sourceName": "RFB e CGIBS — DOU reproduzido no Portal CT-e",
+      "sourceUrl": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=VKMV8IDTX8A%3D",
+      "priority": 2,
+      "priorityUntil": "2026-11-14",
+      "effectiveAt": null,
+      "archived": false,
+      "activePriority": 0,
+      "updatedAt": 1793456443136
     },
     {
       "slug": "assedio-eleitoral-projeto-5701-2026",
@@ -368,6 +488,50 @@
       "updatedAt": 1793441843686
     },
     {
+      "slug": "cbs-calculo-tcu-referencia-outubro-2026",
+      "dateKind": "published",
+      "status": "proposta",
+      "title": "CBS: TCU calcula referência de 11,3%; definição cabe ao Senado",
+      "summary": "O cálculo aprovado pelo TCU é uma etapa técnica. A fixação da alíquota de referência depende de resolução do Senado.",
+      "body": [
+        "Em comunicado de 28 de outubro, o TCU informou ter aprovado o cálculo da alíquota de referência da CBS em 11,3% para 2027. Esse resultado não significa que o percentual já esteja definitivamente fixado pelo Senado.",
+        "Segundo o Tribunal, o cálculo será encaminhado ao Senado até 30 de outubro, com definição da referência prevista até 15 de dezembro. O percentual não corresponde necessariamente à carga efetiva de cada contribuinte."
+      ],
+      "impact": "No planejamento de 2027, acompanhe a decisão do Senado e as regras específicas da atividade antes de aplicar esse percentual às projeções da empresa.",
+      "category": "Reforma tributária",
+      "publishedAt": "2026-10-28",
+      "sourceName": "Tribunal de Contas da União",
+      "sourceUrl": "https://portal.tcu.gov.br/imprensa/noticias/tcu-calcula-aliquota-de-referencia-de-113-para-novo-tributo-sobre-consumo",
+      "priority": 2,
+      "priorityUntil": "2026-11-11",
+      "effectiveAt": null,
+      "archived": false,
+      "activePriority": 0,
+      "updatedAt": 1793297690352
+    },
+    {
+      "slug": "mte-canal-denuncias-assedio-eleitoral-outubro-2026",
+      "dateKind": "published",
+      "status": "comunicado",
+      "title": "MTE disponibiliza canal de denúncias de assédio eleitoral no trabalho",
+      "summary": "Comunicado de 28 de outubro apresenta um canal para relatos de discriminação política no trabalho e anuncia ações conjuntas de prevenção e apuração.",
+      "body": [
+        "O Ministério do Trabalho e Emprego informou que disponibilizou um canal para receber denúncias de pessoas que sofreram ou presenciaram discriminação no ambiente de trabalho relacionada ao voto ou ao posicionamento político.",
+        "A notícia também anuncia orientações pela Carteira de Trabalho Digital e atuação conjunta de instituições. Trata-se de um comunicado sobre serviços e medidas anunciadas, não da publicação de uma nova lei. O anúncio, por si só, não comprova que todas as medidas previstas já estejam implantadas."
+      ],
+      "impact": "O tema merece atenção na comunicação interna e no acolhimento de relatos. A fonte oficial reúne os canais divulgados pelo MTE.",
+      "category": "Trabalhista e eSocial",
+      "publishedAt": "2026-10-28",
+      "sourceName": "Ministério do Trabalho e Emprego",
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/outubro/governo-do-brasil-anuncia-medidas-contra-o-assedio-eleitoral-no-trabalho",
+      "priority": 2,
+      "priorityUntil": "2026-11-11",
+      "effectiveAt": null,
+      "archived": false,
+      "activePriority": 0,
+      "updatedAt": 1793297690352
+    },
+    {
       "slug": "pgfn-debito-automatico-parcelas-outubro-2026",
       "dateKind": "published",
       "status": "comunicado",
@@ -433,7 +597,30 @@
       "archived": false,
       "activePriority": 0,
       "updatedAt": 1793297690352
+    },
+    {
+      "slug": "jornada-trabalho-ec-141-transicao-2026",
+      "dateKind": "published",
+      "status": "norma-aprovada",
+      "title": "Jornada de trabalho: emenda aprovada estabelece redução em etapas",
+      "summary": "Publicada em 16 de outubro, a EC 141/2026 prevê redução progressiva da jornada e dois dias de repouso remunerado, sem redução salarial. A aplicação não é imediata para todas as regras.",
+      "body": [
+        "O texto promulgado estabelece o limite de 42 horas semanais dois meses após a publicação. Um ano depois dessa primeira etapa, o limite passa a 40 horas.",
+        "A ampliação do repouso semanal entra em vigor após dois meses; os demais dispositivos vigoram desde a publicação, observada a transição. Jornadas já iguais ou inferiores a 40 horas não têm redução proporcional automática.",
+        "Há regras específicas para negociação coletiva, determinados empregados e contratos públicos com mão de obra, inclusive obras públicas. O enquadramento precisa considerar o texto integral."
+      ],
+      "impact": "O planejamento de escalas, custos e contratos deve considerar a transição e as regras específicas aplicáveis à atividade.",
+      "category": "Trabalhista e eSocial",
+      "publishedAt": "2026-10-16",
+      "sourceName": "Câmara dos Deputados — texto original da EC 141/2026",
+      "sourceUrl": "https://www2.camara.leg.br/legin/fed/emecon/2026/emendaconstitucional-141-16-outubro-2026-800062-publicacaooriginal-181622-pl.html",
+      "priority": 2,
+      "priorityUntil": "2026-11-11",
+      "effectiveAt": null,
+      "archived": false,
+      "activePriority": 0,
+      "updatedAt": 1793297690352
     }
   ],
-  "checkedAt": 1793726470383
+  "checkedAt": 1795024861446
 }
